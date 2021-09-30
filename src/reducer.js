@@ -26,6 +26,7 @@ const reducer = (state, action) => {
       if (todo.id !== action.payload) {
         return todo;
       }
+      return todo;
     });
     return { ...state, todos: newTodos };
   }
