@@ -22,13 +22,10 @@ const reducer = (state, action) => {
     };
   }
   if (action.type === "REMOVE_TODO") {
-    let newTodos = state.todos.filter((todo) => {
-      if (todo.id !== action.payload) {
-        return todo;
-      }
-      return todo;
-    });
-    return { ...state, todos: newTodos };
+    return {
+      ...state,
+      todos: state.todos.filter((todo) => todo.id !== action.payload),
+    };
   }
   if (action.type === "TOGGLE_COMPLETE") {
     let tempTodo = state.todos.map((todo) => {
